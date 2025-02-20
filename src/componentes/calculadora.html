@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMCC - NutriPet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/imcc.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Calculadora de IMCC</h2>
+
+        <!-- Raça -->
+        <div class="label-container">
+            <label for="raca">Raça:</label>
+            <button class="info-btn" onclick="toggleInfo('infoRaca')">ⓘ</button>
+        </div>
+        <div id="infoRaca" class="info-text">Se a raça do seu cão não estiver listada, selecione "Outro/Misto".</div>
+        <select id="raca">
+            <option value="Outro">Outro/Misto</option>
+            <option value="Boxer">Boxer</option>
+            <option value="Labrador">Labrador</option>
+            <option value="Poodle">Poodle</option>
+        </select>
+
+        <!-- Altura -->
+        <div class="label-container">
+            <label for="altura">Altura:</label>
+            <button class="info-btn" onclick="toggleInfo('infoAltura')">ⓘ</button>
+        </div>
+        <div id="infoAltura" class="info-text">Medida a partir do topo do ombro do seu cão.</div>
+        <div class="input-group">
+            <input type="number" id="altura" placeholder="Altura">
+            <select id="alturaUnidade">
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+            </select>
+        </div>
+
+        <!-- Peso -->
+        <div class="label-container">
+            <label for="peso">Peso:</label>
+            <button class="info-btn" onclick="toggleInfo('infoPeso')">ⓘ</button>
+        </div>
+        <div id="infoPeso" class="info-text">Informe o peso do seu cão.</div>
+        <div class="input-group">
+            <input type="number" id="peso" placeholder="Peso">
+            <select id="pesoUnidade">
+                <option value="kg">kg</option>
+                <option value="g">g</option>
+                <option value="lb">lb</option>
+                <option value="st">st</option>
+            </select>
+        </div>
+
+        <!-- Porte -->
+        <label for="porte">Porte do cão:</label>
+        <select id="porte">
+            <option value="pequeno">Pequeno</option>
+            <option value="medio" selected>Médio</option>
+            <option value="grande">Grande</option>
+        </select>
+
+        <!-- IMCC -->
+        <div class="label-container">
+            <label>IMCC:</label>
+            <button class="info-btn" onclick="toggleInfo('infoIMCC')">ⓘ</button>
+        </div>
+        <div id="infoIMCC" class="info-text">Índice de Massa Corporal Canina.</div>
+        <button id="botaoIMCC">--</button>
+
+        <!-- Mensagem do resultado -->
+        <div id="mensagemResultado"></div>
+
+        <!-- Botões de ação -->
+        <div class="buttons-container">
+            <a href="#" onclick="compartilhar()">Compartilhar</a>
+            <a href="#" onclick="limpar()">Limpar todas alterações</a>
+        </div>
+
+         <!-- Referência -->
+         <div class="referencia">
+            <p>Referência: <a href="https://www.scielo.br/j/cr/a/Tv769dFWwK7GQKyzT9PYvMS/" target="_blank">Estudo sobre IMCC - SciELO</a></p>
+        </div>
+    </iframe>
+</div>
+
+
+    <script src="../src/javascript/calculadora.js"></script>
+</body>
+</html>
